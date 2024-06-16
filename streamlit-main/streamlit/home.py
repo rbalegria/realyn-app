@@ -1,4 +1,3 @@
-%%writefile home.py
 import streamlit as st
 from st_pages import Page, Section, show_pages, add_page_title, hide_pages
 
@@ -26,7 +25,6 @@ st.image("./me.jpg")
 st.info("👨‍🔧 Please take note when on streamlit.app the [Image Classification] pages are not working due to Memory Limitation of 'Free Tier' hosting of Streamlit")
 st.markdown("---")
 
-
 st.markdown("""
 ### 👨‍🎓 Read More
 
@@ -50,7 +48,8 @@ especially in integrating machine learning models into Streamlit apps.
 This experience has also provided valuable insights into
 project planning, development, and deployment of real-world applications.
 
-### 🔎 Overview""", unsafe_allow_html=True)
+### 🔎 Overview
+""", unsafe_allow_html=True)
 
 st.image("./image/backs.jpg")
 
@@ -73,5 +72,4 @@ footer {visibility: hidden;}
 </style>
 """
 
-# st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-home.py
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
