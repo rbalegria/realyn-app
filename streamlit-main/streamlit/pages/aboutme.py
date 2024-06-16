@@ -1,8 +1,10 @@
 import streamlit as st
 import os
 
+# Page title
 st.title("About Alegria")
 
+# Header for self gallery
 st.title("🖼️ Self Gallery")
 
 # Define the base directory for images
@@ -14,19 +16,21 @@ image_files = ["me.jpg"]
 # Construct full paths and verify images exist
 image_paths = [os.path.join(base_dir, filename) for filename in image_files]
 
-# Display images
+# Display images in columns
 cols = st.columns(len(image_paths))
 for col, image_path in zip(cols, image_paths):
     if os.path.exists(image_path):
         try:
-            col.image(image_path)
+            col.image(image_path, use_column_width=True)
         except Exception as e:
             col.write(f"Error displaying image {image_path}: {e}")
     else:
         col.write(f"Image not found: {image_path}")
 
+# Header for personal information
 st.header("👨 Alegria, Rhealyn B.")
 
+# Family members and overview
 st.markdown("""
 ##### 👨‍👦‍👦 Family Members
 
@@ -37,7 +41,7 @@ st.markdown("""
 ### 🔎 Overview
 """, unsafe_allow_html=True)
 
-# Personal Information
+# Personal information
 st.header("Personal Information")
 st.write("**Name:** Alegria, Rhealyn B.")
 st.write("**Age:** 21 years old")
@@ -45,6 +49,7 @@ st.write("**Education:** Currently studying at CARLOS HILADO MEMORIAL STATE UNIV
 st.write("**Year:** 3rd year Bachelor of Science in Information Systems Student")
 st.write("**Location:** Zone 10, Talisay City")
 
+# Expandable section for future vision
 with st.expander("Who am I 10 years from now?"):
     st.markdown("""
     Ten years from now, after graduating college, 
@@ -67,7 +72,7 @@ with st.expander("Who am I 10 years from now?"):
     on how information is managed and utilized globally.
     """, unsafe_allow_html=True)
 
-# Quotes
+# Favorite quotes
 st.header("Favorite Quotes")
 st.write("1. \"Every day may not be a best day but there is always something good in every day.\"")
 st.write("2. \"Calm seas do not create skilled sailors.\"")
@@ -82,30 +87,31 @@ additional_images = [
 
 st.title("🖼️ Gallery")
 
+# Display additional images
 for image in additional_images:
     full_path = os.path.join(base_dir, image["path"])
     if os.path.exists(full_path):
         try:
-            st.image(full_path, caption=image["caption"])
+            st.image(full_path, caption=image["caption"], use_column_width=True)
         except Exception as e:
             st.write(f"Error displaying image {full_path}: {e}")
     else:
         st.write(f"Image not found: {full_path}")
 
-# Custom CSS
+# Custom CSS styling
 st.markdown(
     """
     <style>
     .stApp {
-        background-color: gray;
+        background-color: #f0f0f0; /* Light gray background */
         padding: 2em;
     }
     h1, h2 {
-        color: #4CAF50;
+        color: #4CAF50; /* Green color for headers */
     }
     .stText {
         font-size: 1.2em;
-        color: #333;
+        color: #333; /* Dark gray text color */
     }
     </style>
     """,
