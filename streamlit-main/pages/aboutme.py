@@ -5,10 +5,16 @@ st.title("About Alegria")
 
 st.title("🖼️ Self Gallery")
 
-# Define image paths
-image_paths = ["streamlit-main/pic/me.jpg"]
+# Define the base directory for images
+base_dir = "streamlit-main/pic"
 
-# Verify and display images
+# List of image filenames
+image_files = ["me.jpg"]
+
+# Construct full paths and verify images exist
+image_paths = [os.path.join(base_dir, filename) for filename in image_files]
+
+# Display images
 cols = st.columns(len(image_paths))
 for col, image_path in zip(cols, image_paths):
     if os.path.exists(image_path):
@@ -70,20 +76,21 @@ st.write("4. \"Don't be pushed around by the fears in your mind. Be led by the d
 st.write("5. \"Prepare!\"")
 
 # Additional images
-images = [
-    {"path": "streamlit-main/pic/us1.jpg", "caption": "Throughout my academic journey, the invaluable support of my classmates has been instrumental in shaping my growth and success. As I reflect on the myriad experiences shared with these individuals, it becomes evident that their contributions have enriched my learning, inspired me to persevere through challenges, and fostered a sense of camaraderie that transcends the classroom."},
+additional_images = [
+    {"path": "us1.jpg", "caption": "Throughout my academic journey, the invaluable support of my classmates has been instrumental in shaping my growth and success. As I reflect on the myriad experiences shared with these individuals, it becomes evident that their contributions have enriched my learning, inspired me to persevere through challenges, and fostered a sense of camaraderie that transcends the classroom."},
 ]
 
 st.title("🖼️ Gallery")
 
-for image in images:
-    if os.path.exists(image["path"]):
+for image in additional_images:
+    full_path = os.path.join(base_dir, image["path"])
+    if os.path.exists(full_path):
         try:
-            st.image(image["path"], caption=image["caption"])
+            st.image(full_path, caption=image["caption"])
         except Exception as e:
-            st.write(f"Error displaying image {image['path']}: {e}")
+            st.write(f"Error displaying image {full_path}: {e}")
     else:
-        st.write(f"Image not found: {image['path']}")
+        st.write(f"Image not found: {full_path}")
 
 # Custom CSS
 st.markdown(
