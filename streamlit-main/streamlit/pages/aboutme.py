@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 
-st.title("About Alegria ")
+st.title("About Alegria")
 
 st.title("🖼️ Self Gallery")
 
@@ -11,8 +11,11 @@ image_paths = ["streamlit-main/pic/me.jpg"]
 # Verify and display images
 cols = st.columns(len(image_paths))
 for col, image_path in zip(cols, image_paths):
-    if os.path.exists(image_path):
-        col.image(image_path)
+    if os.path.exists(streamlit):
+        try:
+            col.image(image_path)
+        except Exception as e:
+            col.write(f"Error displaying image {image_path}: {e}")
     else:
         col.write(f"Image not found: {image_path}")
 
@@ -75,7 +78,10 @@ st.title("🖼️ Gallery")
 
 for image in images:
     if os.path.exists(image["path"]):
-        st.image(image["path"], caption=image["caption"])
+        try:
+            st.image(image["path"], caption=image["caption"])
+        except Exception as e:
+            st.write(f"Error displaying image {image['path']}: {e}")
     else:
         st.write(f"Image not found: {image['path']}")
 
