@@ -26,7 +26,7 @@ hide_pages(["Thank you"])
 # Main content
 st.markdown("### 👨‍🔧 ML Learning by [Rhealyn Barrientos Alegria](https://www.facebook.com/rhealyn.alegria.7)")
 
-st.image("./me.jpg")
+st.image("streamlit-main/pic/me.jpg")
 st.info("👨‍🔧 Please take note when on streamlit.app the [Image Classification] pages are not working due to Memory Limitation of 'Free Tier' hosting of Streamlit")
 st.markdown("---")
 
@@ -56,7 +56,7 @@ project planning, development, and deployment of real-world applications.
 ### 🔎 Overview
 """, unsafe_allow_html=True)
 
-st.image("./image/backs.jpg")
+st.image("streamlit-main/pic/backs.jpg")
 
 st.markdown("""
               My name is Rhealyn B. Alegria, a 21-year-old student from Carlos Hilado Memorial State University,
