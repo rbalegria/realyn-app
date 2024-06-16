@@ -1,7 +1,10 @@
 import streamlit as st
 from st_pages import Page, Section, show_pages, add_page_title, hide_pages
 
+# Add the page title
 add_page_title()
+
+# Show the pages and sections
 show_pages(
     [
         Page("home.py", "ITEQMT Machine Learning Application Portfolio", "💻"),
@@ -17,8 +20,10 @@ show_pages(
     ]
 )
 
+# Hide specific pages
 hide_pages(["Thank you"])
 
+# Main content
 st.markdown("### 👨‍🔧 ML Learning by [Rhealyn Barrientos Alegria](https://www.facebook.com/rhealyn.alegria.7)")
 
 st.image("./me.jpg")
@@ -65,6 +70,7 @@ st.markdown("""
               programming and machine learning domains.
 """, unsafe_allow_html=True)
 
+# Hide Streamlit's main menu and footer
 hide_streamlit_style = """
 <style>
 #MainMenu {visibility: hidden;}
