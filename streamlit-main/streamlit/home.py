@@ -7,16 +7,16 @@ add_page_title()
 # Show the pages and sections
 show_pages(
     [
-        Page("home.py", "ITEQMT Machine Learning Application Portfolio", "💻"),
+        Page("streamlit-main/home.py", "ITEQMT Machine Learning Application Portfolio", "💻"),
         Section("Machine Learning UI App", "🧙‍♂️"),
-        Page("prediction.py", "Age Group ML Model", "1️⃣", in_section=True),
-        Page("analyzer.py", "Basic Sentiment Analyzer", "2️⃣", in_section=True),
-        Page("classify.py", "Image Classification", "3️⃣", in_section=True),
+        Page("streamlit-main/pages/prediction.py", "Age Group ML Model", "1️⃣", in_section=True),
+        Page("streamlit-main/pages/analyzer.py", "Basic Sentiment Analyzer", "2️⃣", in_section=True),
+        Page("streamlit-main/pages/classify.py", "Image Classification", "3️⃣", in_section=True),
 
         Section("Sample Source Code", "💾"),
-        Page("prediction_src.py", "Age group prediction SRC", "1️⃣", in_section=True),
-        Page("analyzer_src.py", "Basic Sentiment Analyzer SRC", "2️⃣", in_section=True),
-        Page("classify_src.py", "Image Classification SRC", "3️⃣", in_section=True),
+        Page("streamlit-main/pages/prediction_src.py", "Age group prediction SRC", "1️⃣", in_section=True),
+        Page("streamlit-main/pages/analyzer_src.py", "Basic Sentiment Analyzer SRC", "2️⃣", in_section=True),
+        Page("streamlit-main/pages/classify_src.py", "Image Classification SRC", "3️⃣", in_section=True),
     ]
 )
 
